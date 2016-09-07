@@ -11,18 +11,22 @@
     crossorigin="anonymous"></script>
 
   <script>
+    function inputChanged(){
+      alert("I'm here");
+    }
+    
   </script>
 </head>
 
 <body>
   <label for='borderWidth'> border-width </label>
-  <input type='number' id='borderWidth'>
+  <input onchange='inputChanged()' type='number' id='borderWidth'>
 
   <label for='borderColor'> border-color </label>
-  <input type='number' id='borderColor'>
+  <input onchange='inputChanged()' type='number' id='borderColor'>
 
   <label for='borderRadius'> border-radius </label>
-  <input type='number' id='borderRadius'>
+  <input onchange='inputChanged()' type='number' id='borderRadius'>
 
   <div id='result' style='height:100px;width:100px;background:gray'> </div>
 </body>
