@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <style>
+  </style>
+
+  <!--
+  <script
+  src="https://code.jquery.com/jquery-3.1.0.js"
+      integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="
+    crossorigin="anonymous"></script>
+  -->
+
+  <script>
+    function inputChanged(){
+      //var x = $("#borderWidth").val() + "px";
+      var x = document.getElementById("borderWidth").value + "px";
+      //$("#result").css("border-width", x );
+      document.getElementById("result").style.borderWidth = x;
+
+      var x = document.getElementById("borderRadius").value + "px";
+      document.getElementById("result").style.borderRadius = x;
+
+      var x = "#" + document.getElementById("borderColor").value;
+      document.getElementById("result").style.borderColor = x;
+    }
+    
+  </script>
+</head>
+
+<body>
+  <label for='borderWidth'> border-width </label>
+  <input onchange='inputChanged()' type='number' id='borderWidth'>
+  <span> px </span>
+  <br>
+
+  <label for='borderColor'> border-color #</label>
+  <input onchange='inputChanged()' type='text' id='borderColor'>
+  <br>
+
+  <label for='borderRadius'> border-radius </label>
+  <input onchange='inputChanged()' type='number' id='borderRadius'>
+  <span> px </span>
+  <br>
+
+  <div id='result' style='border-style:solid;height:100px;width:100px;background:gray'> </div>
+</body>
+
+</html>
