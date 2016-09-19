@@ -14,9 +14,10 @@
 
   <script>
     function inputChanged(){
-      //var x = $("#borderWidth").val() + "px";
-      var x = document.getElementById("borderWidth").value + "px";
-      //$("#result").css("border-width", x );
+      /*var x = $("#borderWidth").val() + "px";
+      $("#result").css("border-width", x ); */
+
+      var x = document.getElementById("borderWidth").value + "px"; // get border width
       document.getElementById("result").style.borderWidth = x;
 
       var x = document.getElementById("borderRadius").value + "px";
@@ -27,6 +28,14 @@
     }
     
   </script>
+
+  <style>
+/*
+      body{
+        background: black;
+      }
+      */
+  </style>
 </head>
 
 <body>
