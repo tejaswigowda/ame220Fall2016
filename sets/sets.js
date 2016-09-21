@@ -21,6 +21,11 @@ var Sets = {
           pointer++;
         }        
         return setR;
+    },
+    intersection: function(setA, setB){
+        var setR = [];
+    
+        return setR;
     }
 
 }
