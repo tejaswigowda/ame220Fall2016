@@ -29,13 +29,16 @@ var Sets = {
         while(pointer < setA.length){
           var currEle = setA[pointer]
           if(setB.indexOf(currEle) >= 0){
-              // currEle is not in setR
             setR[setR.length] = currEle;
           }
           pointer++;
         }        
         */
-        for(var pointer = 0; pointer < setA.length; pinter ++){
+        for(var pointer = 0; pointer < setA.length; pointer ++){
+          var currEle = setA[pointer]
+          if(setB.indexOf(currEle) >= 0){
+            setR[setR.length] = currEle;
+          }
         }
     
         return setR;
