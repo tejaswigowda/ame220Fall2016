@@ -8,16 +8,23 @@
 <script>
 var calcResult = function(){
   var total = 0;
-  total += parseFloat(document.getElementById("a1").value);
-  total += parseFloat(document.getElementById("a2").value);
-  total += parseFloat(document.getElementById("a3").value);
-  total += parseFloat(document.getElementById("a4").value);
-  total += parseFloat(document.getElementById("a5").value);
-  total += parseFloat(document.getElementById("a6").value);
-  total += parseFloat(document.getElementById("aF").value);
+  if(parseFloat(document.getElementById("a1").value) != NaN)
+    total += parseFloat(document.getElementById("a1").value);
+  if(parseFloat(document.getElementById("a2").value) != NaN)
+    total += parseFloat(document.getElementById("a2").value);
+  if(parseFloat(document.getElementById("a3").value) != NaN)
+    total += parseFloat(document.getElementById("a3").value);
+  if(parseFloat(document.getElementById("a4").value) != NaN)
+    total += parseFloat(document.getElementById("a4").value);
+  if(parseFloat(document.getElementById("a5").value) != NaN)
+    total += parseFloat(document.getElementById("a5").value);
+  if(parseFloat(document.getElementById("a6").value) != NaN)
+    total += parseFloat(document.getElementById("a6").value);
+  if(parseFloat(document.getElementById("aF").value) != NaN)
+    total += parseFloat(document.getElementById("aF").value);
   
 
-  document.getElementById("result").innerHTML = "Total: " + total;
+  document.getElementById("result").innerHTML = "Total: " + total.toS;
 }
 </script>
 
