@@ -6,39 +6,35 @@
 </style>
 
 <script>
+var getGrade(T)
+{
+}
+
 var calcResult = function(){
   var total = 0;
 
   if(!isNaN(parseFloat(document.getElementById("a1").value)))
     total += parseFloat(document.getElementById("a1").value);
-console.log(total);
-
 
   if(!isNaN(parseFloat(document.getElementById("a2").value)))
     total += parseFloat(document.getElementById("a2").value);
-console.log(total);
 
   if(!isNaN(parseFloat(document.getElementById("a3").value)))
     total += parseFloat(document.getElementById("a3").value);
-console.log(total);
 
   if(!isNaN(parseFloat(document.getElementById("a4").value)))
     total += parseFloat(document.getElementById("a4").value);
-console.log(total);
 
   if(!isNaN(parseFloat(document.getElementById("a5").value)))
     total += parseFloat(document.getElementById("a5").value);
-console.log(total);
 
   if(!isNaN(parseFloat(document.getElementById("a6").value)))
     total += parseFloat(document.getElementById("a6").value);
-console.log(total);
 
   if(!isNaN(parseFloat(document.getElementById("aF").value)))
     total += parseFloat(document.getElementById("aF").value);
-console.log(total);
   
-  document.getElementById("result").innerHTML = "Total: " + total.toString();
+  document.getElementById("result").innerHTML = "Total: " + total.toString() + "<br> Grade: " + getGrade(total);
 }
 </script>
 
