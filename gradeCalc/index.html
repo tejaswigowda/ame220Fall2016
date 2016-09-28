@@ -6,6 +6,41 @@
 </style>
 
 <script>
+var getGradeIE = function(T)
+{
+    if(T >= 97){
+      return "A+";
+    }
+    else if(T >= 93){
+        return "A";
+    }
+    else if(T >= 90){
+        return "A-";
+    }
+    else if(T >= 87){
+        return "B+";
+    }
+    else if(T >= 83){
+        return "B";
+    }
+    else if(T >= 80){
+        return "B-";
+    }
+    else if(T >= 77){
+        return "C+";
+    }
+    else if(T >= 70){
+        return "C";
+    }
+    else if(T >= 60){
+        return "D";
+    }
+    else{
+        return "E";
+    }
+}
+
+
 var getGrade = function(T)
 {
     if(T >= 97){
@@ -80,7 +115,7 @@ var calcResult = function(){
   if(!isNaN(parseFloat(document.getElementById("aF").value)))
     total += parseFloat(document.getElementById("aF").value);
   
-  document.getElementById("result").innerHTML = "Total: " + total.toString() + "<br> Grade: " + getGrade(total);
+  document.getElementById("result").innerHTML = "Total: " + total.toString() + "<br> Grade: " + getGradeIE(total);
 }
 </script>
 
