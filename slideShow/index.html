@@ -7,6 +7,12 @@
     crossorigin="anonymous"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <style>
+.button{
+    min-width: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
 body{
     min-height: 100%;
     position: absolute;
@@ -53,9 +59,9 @@ body{
   <div id='ssWrapper'> </div>
   <div id='snWrapper'> </div>
   <div id='moveWrapper'>
-    <a href='javascript:moveLeft()'><i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <a class='button' href='javascript:moveLeft()'><i class="fa fa-chevron-left" aria-hidden="true"></i>
 </a>
-    <a href='javascript:moveRight()'><i class="fa fa-chevron-right" aria-hidden="true"></i>
+    <a class='button' href='javascript:moveRight()'><i class="fa fa-chevron-right" aria-hidden="true"></i>
 </a>
   </div>
 </body>
