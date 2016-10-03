@@ -17,7 +17,7 @@
 var main = function(){
   var mut = "";
   for(var i = 0; i < urls.length; i++){
-     mut += "<a href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
+     mut += "<a class='gotoN' href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
   }
   document.getElementById("snWrapper").innerHTML = mut;
 }
