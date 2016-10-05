@@ -18,11 +18,23 @@ var main = function(){
   var slidemu = "";
   for(var i = 0; i < urls.length; i++){
      mut += "<a class='gotoN' href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
-     slidemu += "<div class='slide' style='background-image:url(" + urls[i] + ")'></div>";
+     slidemu += "<div id='slide" + i + "' class='slide' style='background-image:url(" + urls[i] + ")'></div>";
   }
   document.getElementById("snWrapper").innerHTML = mut;
   document.getElementById("ssWrapper").innerHTML = slidemu;
-  console.log(slidemu);
+}
+
+var animation = "fade";
+//var animation = "slide";
+
+var goToSlide = function(slideno){
+    if(animation === "fade"){
+      $(".slide").animate({"opacity":"0"},1000);
+      $("#slide" + slideno).stop().animate({"opacity":"1"},1000);
+    }
+    else if(animation === "slide"){
+      // Assignment 3
+    }
 }
 
 </script>
