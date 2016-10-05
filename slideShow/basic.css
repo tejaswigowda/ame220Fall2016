@@ -29,7 +29,6 @@ body{
     bottom: 10px;
     width: calc(90% - 120px);
     left: 5%;
-    border: 1px solid;
 }
 
 #moveWrapper
@@ -38,8 +37,7 @@ body{
     bottom: 10px;
     width: 120px;
     right: 5%;
-    border: 1px solid;
-    font-size: 50px;
+    font-size: 40px;
     text-align: right;
 }
 
