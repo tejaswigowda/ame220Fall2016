@@ -6,67 +6,30 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
     crossorigin="anonymous"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="basic.css" rel="stylesheet">
 
 <script>
-  var urls = window.location.hash.split(",");
+  var hash = window.location.hash;
+  var urls = hash.split("__$__")[0].split(",");
 
 
 var main = function(){
   var mut = "";
+  var slidemu = "";
   for(var i = 0; i < urls.length; i++){
      mut += "<a class='gotoN' href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
+     slidemu += "<div class='slide' style='background-image:url(" +
+       urls[i] + ")'></div>";
+      
+      
   }
   document.getElementById("snWrapper").innerHTML = mut;
+  document.getElementById("ssWrapper").innerHTML = slidemu;
+  console.log(slidemu);
 }
 
 </script>
 
-<style>
-.button{
-    min-width: 50px;
-    text-align: center;
-    display: inline-block;
-}
-
-body{
-    min-height: 100%;
-    position: absolute;
-    min-width: 100%;
-    overflow: hidden;
-    margin: 0;
-}
-
-#ssWrapper{
-    height: 90%;
-    width: 90%;
-    position: absolute;
-    margin-left: 5%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    background: gray;
-}
-
-#snWrapper
-{
-    position: absolute;
-    height: 50px;
-    bottom: 10px;
-    width: calc(90% - 120px);
-    left: 5%;
-    border: 1px solid;
-}
-
-#moveWrapper
-{
-    position: absolute;
-    bottom: 10px;
-    height: 50px;
-    width: 120px;
-    right: 5%;
-    border: 1px solid;
-    font-size: 50px;
-}
-</style>
 </head>
 
 <body onload='main()'>
