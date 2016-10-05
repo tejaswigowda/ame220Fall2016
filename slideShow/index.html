@@ -22,6 +22,7 @@ var main = function(){
   }
   document.getElementById("snWrapper").innerHTML = mut;
   document.getElementById("ssWrapper").innerHTML = slidemu;
+  goToSlide(0);
 }
 
 var animation = "fade";
@@ -35,7 +36,10 @@ var goToSlide = function(slideno){
     else if(animation === "slide"){
       // Assignment 3
     }
+    currentSlide = slideno;
 }
+
+var currentSlide = 0;
 
 var moveLeft()
 {
