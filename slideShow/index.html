@@ -56,7 +56,10 @@ var moveLeft = function()
 
 var moveRight = function()
 {
+  var nextSlide = (currentSlide == urls.length - 1) ? 0 : (currentSlide + 1);
     if(animation === "fade"){
+      currentSlide = nextSlide;
+      goToSlide(currentSlide);
     }
     else if(animation === "slide"){
       // Assignment 3
