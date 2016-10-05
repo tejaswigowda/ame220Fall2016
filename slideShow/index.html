@@ -42,7 +42,7 @@ var goToSlide = function(slideno){
 }
 
 
-var moveLeft()
+var moveLeft = function()
 {
   var nextSlide = (currentSlide == 0) ? (urls.length - 1) : (currentSlide - 1);
     if(animation === "fade"){
@@ -54,7 +54,7 @@ var moveLeft()
     }
 }
 
-var moveRight()
+var moveRight = function()
 {
     if(animation === "fade"){
     }
