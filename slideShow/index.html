@@ -17,7 +17,7 @@ var main = function(){
   var mut = "";
   var slidemu = "";
   for(var i = 0; i < urls.length; i++){
-     mut += "<a class='gotoN' href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
+     mut += "<a id='gotoN" + i + "' class='gotoN' href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
      slidemu += "<div id='slide" + i + "' class='slide' style='background-image:url(" + urls[i] + ")'></div>";
   }
   document.getElementById("snWrapper").innerHTML = mut;
@@ -39,6 +39,8 @@ var goToSlide = function(slideno){
       // Assignment 3
     }
     currentSlide = slideno;
+    $(".gotoN").removeClass("active");
+    $("#gotoN" + slideno).stop().addClass("active");
 }
 
 
