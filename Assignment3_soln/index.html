@@ -9,9 +9,20 @@
 <link href="basic.css" rel="stylesheet">
 
 <script>
+  function assignBodyClassName()
+  {
+    var cn = "";
+    var ua = window.navigator.userAgent;
+    // your logic here to determine id cn = 'mouse' or 'touch'
+
+    $("body").addClass(cn);
+  }
+
+
   var hash = window.location.hash.replace("#","");
   var urls = hash.split(",");
 var main = function(){
+  assignBodyClassName();
   var mut = "";
   var slidemu = "";
   for(var i = 0; i < urls.length; i++){
