@@ -75,8 +75,8 @@ var main = function(){
       //$("#slide" + slidenum).animate({"margin-left": "0px"}, 1000)
     }
     currentSlide = slidenum;
-    $(".gotoN").removeClass("active");
-    $(".gotoN" + slidenum).stop().addClass("active");
+    $("#snWrapper button").removeClass("active");
+    $("#snWrapper button:nth-of-type(" + (slidenum + 1) + ")").stop().addClass("active");
   }
 
 
