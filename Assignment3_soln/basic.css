@@ -1,0 +1,60 @@
+.button{
+    min-width: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+body{
+    min-height: 100%;
+    position: absolute;
+    min-width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+#ssWrapper{
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background: transparent;
+}
+
+#snWrapper
+{
+    position: absolute;
+    height: 50px;
+    bottom: 10px;
+    width: calc(90% - 120px);
+    left: 5%;
+}
+
+#moveWrapper
+{
+    position: absolute;
+    bottom: 10px;
+    width: 120px;
+    right: 5%;
+    font-size: 40px;
+    text-align: right;
+}
+
+.slide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: 50%;
+  background-size: cover;
+}
+
+.gotoN
+{
+   min-width: 30px;
+   display: inline-block;
+   text-align: center;
+   line-height: 50px;
+   font-size: 24px;
+   text-decoration: none;
+}

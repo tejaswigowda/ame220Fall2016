@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<script
+  src="http://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="basic.css" rel="stylesheet">
+
+<script>
+  var hash = window.location.hash.replace("#","");
+  var urls = hash.split(",");
+var main = function(){
+  var mut = "";
+  var slidemu = "";
+  for(var i = 0; i < urls.length; i++){
+     mut += "<a class='gotoN' href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
+     slidemu += "<div id='slide" + i + "' class='slide' style='background-image:url(" + urls[i] + ")'></div>";
+  }
+  document.getElementById("snWrapper").innerHTML = mut;
+  document.getElementById("ssWrapper").style.opacity = "0"
+  document.getElementById("ssWrapper").innerHTML = slidemu;
+  setTimeout("goToSlide(0)", 100)
+}
+
+  //var animation = "fade";
+  var animation = "slide";
+
+  var currentSlide = 0;
+
+  var goToSlide = function(slidenum){
+    setTimeout('document.getElementById("ssWrapper").style.opacity = "1"',550);
+    if(animation == "fade") {
+      $(".slide").animate({"opacity":"0"},500);
+      $("#slide" + slidenum).stop().animate({"opacity":"1"},500);
+    }
+    else if(animation == "slide") {
+      var w = $("body").innerWidth();
+      for(i=0; i < urls.length; i++) {
+        if(i == slidenum) {
+          $("#slide" + i).animate({"margin-left": "0px"}, 500, "swing")
+        }
+        else {
+            $("#slide" + i).animate({"margin-left": (w * (i-slidenum)) + "px"}, 500, "swing")
+        }
+      }
+      // old version
+      /*if(slidenum == 0) {
+        $("#slide0").animate({"margin-left": "0px"}, 500)
+        $("#slide1").animate({"margin-left": w + "px"}, 500)
+        $("#slide2").animate({"margin-left": w * 2 + "px"}, 500)
+        $("#slide3").animate({"margin-left": w * 3 + "px"}, 500)
+      }
+      else if(slidenum == 1) {
+        $("#slide0").animate({"margin-left": "-" + w + "px"}, 500)
+        $("#slide1").animate({"margin-left": "0px"}, 500)
+        $("#slide2").animate({"margin-left": w + "px"}, 500)
+        $("#slide3").animate({"margin-left": w * 2 + "px"}, 500)
+      }
+      else if(slidenum == 2) {
+        $("#slide0").animate({"margin-left": "-" + w * 2 + "px"}, 500)
+        $("#slide1").animate({"margin-left": "-" + w + "px"}, 500)
+        $("#slide2").animate({"margin-left": "0px"}, 500)
+        $("#slide3").animate({"margin-left": w + "px"}, 500)
+      }
+      else if(slidenum == 3) {
+        $("#slide0").animate({"margin-left": "-" + w * 3 + "px"}, 500)
+        $("#slide1").animate({"margin-left": "-" + w * 2 + "px"}, 500)
+        $("#slide2").animate({"margin-left": "-" + w + "px"}, 500)
+        $("#slide3").animate({"margin-left": "0px"}, 500)
+      }*/
+      //$(".slide").animate({"margin-left": w + "px"}, 1000)
+      //$(".slide").animate({"margin-right": "-" + w + "px"}, 1000)
+      //$("#slide" + slidenum).animate({"margin-left": "0px"}, 1000)
+    }
+    currentSlide = slidenum;
+    $(".gotoN").removeClass("active");
+    $(".gotoN" + slideNum).stop().addClass("active");
+  }
+
+
+  var moveLeft = function() {
+    var nextSlide = (currentSlide == 0) ? urls.length - 1 : (currentSlide - 1);
+    if(animation == "fade") {
+      currentSlide = nextSlide;
+      goToSlide(currentSlide);
+    }
+    else if(animation == "slide") {
+      currentSlide = nextSlide;
+      goToSlide(currentSlide);
+    }
+  }
+
+    var moveRight = function() {
+      var nextSlide = (currentSlide == urls.length - 1) ? 0 : (currentSlide + 1);
+      if(animation == "fade") {
+        currentSlide = nextSlide;
+        goToSlide(currentSlide);
+      }
+      else if(animation == "slide") {
+        currentSlide = nextSlide;
+        goToSlide(currentSlide);
+      }
+    }
+</script>
+
+</head>
+
+<body onload='main()'>
+  <div id='ssWrapper'> </div>
+  <div id='snWrapper'> </div>
+  <div id='moveWrapper'>
+    <a class='button' href='javascript:moveLeft()'><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+    <a class='button' href='javascript:moveRight()'><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+  </div>
+</body>
+
+</html>
