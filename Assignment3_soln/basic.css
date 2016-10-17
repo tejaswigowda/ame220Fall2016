@@ -1,7 +1,13 @@
-.button{
+button{
+  background: transparent;
+  border: none;
+}
+
+#moveWrapper button{
     min-width: 50px;
     text-align: center;
     display: inline-block;
+    font-size: 40px;
 }
 
 body{
@@ -49,7 +55,7 @@ body{
   background-size: cover;
 }
 
-.gotoN
+#snWrapper button
 {
    min-width: 30px;
    display: inline-block;

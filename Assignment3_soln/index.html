@@ -15,7 +15,7 @@ var main = function(){
   var mut = "";
   var slidemu = "";
   for(var i = 0; i < urls.length; i++){
-     mut += "<a class='gotoN' href='javascript:goToSlide(" + i + ")'>" + (i+1).toString() + "</a>";
+     mut += "<button onclick='goToSlide(" + i + ")'>" + (i+1).toString() + "</button>";
      slidemu += "<div id='slide" + i + "' class='slide' style='background-image:url(" + urls[i] + ")'></div>";
   }
   document.getElementById("snWrapper").innerHTML = mut;
@@ -76,7 +76,7 @@ var main = function(){
     }
     currentSlide = slidenum;
     $(".gotoN").removeClass("active");
-    $(".gotoN" + slideNum).stop().addClass("active");
+    $(".gotoN" + slidenum).stop().addClass("active");
   }
 
 
@@ -111,8 +111,8 @@ var main = function(){
   <div id='ssWrapper'> </div>
   <div id='snWrapper'> </div>
   <div id='moveWrapper'>
-    <a class='button' href='javascript:moveLeft()'><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-    <a class='button' href='javascript:moveRight()'><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    <button onclick='moveLeft()'><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+    <button onclick='moveRight()'><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
   </div>
 </body>
 
