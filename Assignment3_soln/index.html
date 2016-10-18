@@ -51,10 +51,10 @@ var main = function(){
       var w = $("body").innerWidth();
       for(i=0; i < urls.length; i++) {
         if(i == slidenum) {
-          $("#slide" + i).animate({"margin-left": "0px"}, 500, "swing")
+          $("#slide" + i).stop().animate({"margin-left": "0px"}, 500, "swing")
         }
         else {
-            $("#slide" + i).animate({"margin-left": (w * (i-slidenum)) + "px"}, 500, "swing")
+            $("#slide" + i).stop().animate({"margin-left": (w * (i-slidenum)) + "px"}, 500, "swing")
         }
       }
       // old version
