@@ -94,10 +94,10 @@ var main = function(){
       var w = $("body").innerWidth();
       for(i=0; i < urls.length; i++) {
         if(i == slidenum) {
-          $("#slide" + i).stop().css({"margin-left": "0px"});
+          $("#slide" + i).stop().css({"margin-left": "0px", "transform": "scale(1)"});
         }
         else {
-            $("#slide" + i).stop().css({"margin-left": (w * (i-slidenum)) + "px"});
+            $("#slide" + i).stop().css({"margin-left": (w * (i-slidenum)) + "px", "transform": "scale(.5)"});
         }
       }
       // old version
