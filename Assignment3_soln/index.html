@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
 <head>
+
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width, maximum-scale=1.0">
+
 <script
   src="http://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
@@ -10,6 +12,22 @@
 <link href="basic.css" rel="stylesheet">
 
 <script>
+var resizeTimer;
+
+$(window).on('resize', function(e) {
+
+  console.log("resize event");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+
+    // Run code here, resizing has "stopped"
+    console.log("resize-end event");
+    assignBodyClassName();
+            
+  }, 250);
+
+});
+
   function assignBodyClassName()
   {
     var cn = "";
@@ -29,9 +47,19 @@
       wt = "touch "
     }
 
+    var w = $("body").innerWidth();
+    if(w < 480){
+      cn += "small ";
+    }
+    else if(w > 480 && w < 800){
+      cn += "med ";
+    }
+    else if(w > 800){
+      cn += "big ";
+    }
 
     cn += wt;
-    $("body").addClass(cn);
+    document.body.className = cn;
   }
 
 
