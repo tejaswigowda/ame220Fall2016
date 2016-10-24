@@ -16,13 +16,13 @@ var resizeTimer;
 
 $(window).on('resize', function(e) {
 
-  console.log("resize event");
   clearTimeout(resizeTimer);
   resizeTimer = setTimeout(function() {
 
     // Run code here, resizing has "stopped"
-    console.log("resize-end event");
     assignBodyClassName();
+    goToSlide(currentSlide);
+
             
   }, 250);
 
