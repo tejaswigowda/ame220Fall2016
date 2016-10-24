@@ -87,17 +87,17 @@ var main = function(){
   var goToSlide = function(slidenum){
     setTimeout('document.getElementById("ssWrapper").style.opacity = "1"',550);
     if(animation == "fade") {
-      $(".slide").animate({"opacity":"0"},500);
-      $("#slide" + slidenum).stop().animate({"opacity":"1"},500);
+      $(".slide").css({"opacity":"0"});
+      $("#slide" + slidenum).stop().css({"opacity":"1"});
     }
     else if(animation == "slide") {
       var w = $("body").innerWidth();
       for(i=0; i < urls.length; i++) {
         if(i == slidenum) {
-          $("#slide" + i).stop().animate({"margin-left": "0px"}, 500, "swing")
+          $("#slide" + i).stop().css({"margin-left": "0px"});
         }
         else {
-            $("#slide" + i).stop().animate({"margin-left": (w * (i-slidenum)) + "px"}, 500, "swing")
+            $("#slide" + i).stop().css({"margin-left": (w * (i-slidenum)) + "px"});
         }
       }
       // old version
