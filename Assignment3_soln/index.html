@@ -13,18 +13,24 @@
   function assignBodyClassName()
   {
     var cn = "";
+    var wt = "web "
     var ua = window.navigator.userAgent.toLowerCase();
     // your logic here to determine id cn = 'mouse' or 'touch'
     if(ua.indexOf("android")>0){
       cn += "android ";
+      wt = "touch "
     }
     else if(ua.indexOf("iphone")>0){
       cn += "iphone ";
+      wt = "touch "
     }
     else if(ua.indexOf("ipad")>0){
       cn += "ipad ";
+      wt = "touch "
     }
 
+
+    cn += wt;
     $("body").addClass(cn);
   }
 
