@@ -11,7 +11,6 @@ body{
     height: 300px;
     width: 300px;
     margin: auto;
-    margin-top: calc(50% - 150px);
     border: 1px solid;
     border-radius: 150px;
 }
@@ -21,11 +20,47 @@ body{
 #num12{
     transform: translate(142px, 2px);
 }
+#num11{
+    transform: translate( 70px, 27px);
+}
+#num10{
+    transform: translate();
+}
+#num9{
+    transform: translate();
+}
+#num8{
+    transform: translate();
+}
+#num7{
+    transform: translate();
+}
+#num6{
+    transform: translate();
+}
+#num5{
+    transform: translate();
+}
+#num4{
+    transform: translate();
+}
 #num3{
+    transform: translate();
+}
+#num2{
+    transform: translate();
+}
+#num1{
+    transform: translate();
 }
 </style>
+<script>
+  function start(){
+      document.getElementById("clockBox").style.marginTop = document.getElementsByTagName("body")[0].offsetHeight/2 - 150 + "px";
+  }
+</script>
 </head>
-<body>
+<body onload='start()'>
 
 <div id='clockBox'>
   <div class='num' id='num1'> 1 </div>
