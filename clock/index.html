@@ -91,6 +91,37 @@ body{
   function setupScreen(){
       document.getElementById("clockBox").style.marginTop = document.getElementsByTagName("body")[0].offsetHeight/2 - 150 + "px";
   }
+
+
+  function updateClock(){
+    var h = new Date().getHours();
+    var m = new Date().getMinutes();
+    var s = new Date().getSeconds();
+    var ampm = "am";
+    var daylight = "night";
+    if(h > 6 && h < 18){
+        daylight = "day";
+    }
+    if(h > 12){
+      ampm = "pm";
+      h = h -12;
+    }
+
+    var hdeg = (h-3) * 30
+    var mdeg = (m-15) * 6;
+    var sdeg = (s-15) * 6;
+
+    if(hdeg < 0) hdeg = 360 + hdeg;
+    if(mdeg < 0) mdeg = 360 + hdeg;
+    if(sdeg < 0) sdeg = 360 + hdeg;
+
+    hdeg += m / 2;
+
+    document.getElementById("hour").style.transform = "rotate(" + hdeg + "deg)";
+    document.getElementById("min").style.transform = "rotate(" + mdeg + "deg)";
+    document.getElementById("sec").style.transform = "rotate(" + sdeg + "deg)";
+
+  }
 </script>
 </head>
 <body onload='start()'>
