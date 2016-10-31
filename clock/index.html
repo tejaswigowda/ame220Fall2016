@@ -24,38 +24,71 @@ body{
     transform: translate( 70px, 27px);
 }
 #num10{
-    transform: translate();
+    transform: translate(30px, 90px);
 }
 #num9{
-    transform: translate();
+    transform: translate(20px, 170px);
 }
 #num8{
-    transform: translate();
+    transform: translate(25px, 210px);
 }
 #num7{
-    transform: translate();
+    transform: translate(70px, 260px);
 }
 #num6{
-    transform: translate();
+    transform: translate(142px, 280px);
 }
 #num5{
-    transform: translate();
+    transform: translate(210px, 265px);
 }
 #num4{
-    transform: translate();
+    transform: translate(265px, 220px);
 }
 #num3{
-    transform: translate();
+    transform: translate(292px, 150px);
 }
 #num2{
-    transform: translate();
+    transform: translate(275px, 90px);
 }
 #num1{
-    transform: translate();
+    transform: translate(220px, 27px);
 }
+
+.hand{
+    margin-left: 140px;
+    margin-top: 140px;
+    transform-origin: 10px 0px;
+    position: absolute;
+    padding-left: 10px;
+}
+
+#hour{
+   background: black;
+   height: 2px;
+   width: 90px;
+}
+
+#min{
+   background: black;
+   height: 2px;
+   width: 110px;
+}
+
+
+#sec{
+   background: red;
+   height: 2px;
+   width: 130px;
+}
+
+
 </style>
 <script>
   function start(){
+    setupScreen();
+    setInterval("updateClock()", 1000);
+  }
+  function setupScreen(){
       document.getElementById("clockBox").style.marginTop = document.getElementsByTagName("body")[0].offsetHeight/2 - 150 + "px";
   }
 </script>
