@@ -5,8 +5,6 @@
 </title>
 <style>
   #imagePreview{
-      height: 300px;
-      width: 300px;
       display: block;
   }
 </style>
@@ -16,8 +14,8 @@
     crossorigin="anonymous"></script>
 
 <script>
-var MAX_WIDTH = 100;
-var MAX_HEIGHT = 100;
+var MAX_WIDTH = 500;
+var MAX_HEIGHT = 500;
 var imageUploaded = function()
 {
    var file = $('#uploadImage').get(0);
@@ -34,8 +32,8 @@ var imageUploaded = function()
             img.onload= function(){
                  var width = img.width;
                  var height = img.height;
-                 var w2 = width;
-                 var h2 = height;
+                 var w2 = MAX_WIDTH;
+                 var h2 = MAX_HEIGHT;
 
                  if (width > height) {
                      if (width > MAX_WIDTH) {
