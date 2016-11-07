@@ -67,6 +67,8 @@ var imageUploaded = function()
 
 <body>
   <input type="file" name="uploadImage" id="uploadImage" onchange="imageUploaded()">
+  <input type="number" placeholder="Width(px)" id="iWidth" value='200' onchange="imageUploaded()">
+  <input type="number" placeholder="Height(px)" id="iHeight" value='200'  onchange="imageUploaded()">
   <img id="imagePreview">
 </body>
 
