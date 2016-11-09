@@ -23,6 +23,10 @@ var imageUploaded = function()
         alert("Incorrect file type -- Please ensure you are uploading an image file.");
         return;
    }
+
+   MAX_WIDTH = parseFloat(document.getElementById("iWidth").value);
+   MAX_HEIGHT = parseFloat(document.getElementById("iHeight").value);
+
    if ( file.files && file.files[0] && file.files[0].type.split("/")[0].toLowerCase() === "image") {
         var FR = new FileReader();
         FR.onload = function(e) {
@@ -67,8 +71,8 @@ var imageUploaded = function()
 
 <body>
   <input type="file" name="uploadImage" id="uploadImage" onchange="imageUploaded()">
-  <input type="number" placeholder="Width(px)" id="iWidth" value='200' onchange="imageUploaded()">
   <input type="number" placeholder="Height(px)" id="iHeight" value='200'  onchange="imageUploaded()">
+  <input type="number" placeholder="Width(px)" id="iWidth" value='200' onchange="imageUploaded()">
   <img id="imagePreview">
 </body>
 
