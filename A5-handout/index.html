@@ -52,9 +52,11 @@ var imageUploaded = function()
                 var ctx = canvas.getContext("2d");
                 ctx.drawImage(img, 0, 0, w2, h2);
                 var base64St = canvas.toDataURL("image/png");
+                /*
                 document.getElementById("imagePreview").src = base64St;
                 document.getElementById("imagePreview").style.height = MAX_HEIGHT + "px";
                 document.getElementById("imagePreview").style.width= MAX_WIDTH + "px";
+               */
             }
             img.src = data;
         };  

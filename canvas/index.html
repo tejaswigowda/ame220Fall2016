@@ -41,17 +41,17 @@ var imageUploaded = function()
 
                  if (width > height) {
                      if (width > MAX_WIDTH) {
-                        h2 = height * MAX_WIDTH / width;
                         w2 = MAX_WIDTH;
+                        h2 = height * MAX_WIDTH / width;
                     }
                  } else {
                      if (height > MAX_HEIGHT) {
-                        w2 = width * MAX_HEIGHT / height;
                         h2 = MAX_HEIGHT;
+                        w2 = width * MAX_HEIGHT / height;
                     }
                 }
-                canvas.width = w2;
-                canvas.height = h2;
+                canvas.width = MAX_WIDTH;
+                canvas.height = MAX_HEIGHT;
                 var ctx = canvas.getContext("2d");
                 ctx.drawImage(img, 0, 0, w2, h2);
                 var base64St = canvas.toDataURL("image/png");
