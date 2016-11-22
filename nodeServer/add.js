@@ -9,12 +9,13 @@ var querystring = require('querystring');
 
 var callback = function (req, res) { // req -> request object; res -> response object
   
-  var query = url.parse(req.url).query;
+  var query = req.url.split("?")[1];//url.parse(req.url).query;
   var route = req.url.split("?")[0];
   var params = querystring.parse(query);
 
   console.log(req.url);
   console.log(route);
+  console.log(query);
   console.log(params);
 
   if(route === "/addNumbers"){ // if route is addNumbers
